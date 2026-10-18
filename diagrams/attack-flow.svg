@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="680" viewBox="0 0 720 680" font-family="Arial, Helvetica, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#A32D2D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <marker id="arrowgray" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#8C8B85" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <!-- trust zone bands -->
+  <rect x="15" y="72" width="213" height="556" rx="12" fill="#ECECEA"/>
+  <rect x="246" y="72" width="228" height="556" rx="12" fill="#ECECEA"/>
+  <rect x="492" y="72" width="213" height="556" rx="12" fill="#ECECEA"/>
+  <text x="121" y="58" text-anchor="middle" font-size="12" fill="#6E6E68">Internet (untrusted)</text>
+  <text x="360" y="58" text-anchor="middle" font-size="12" fill="#6E6E68">7-Eleven corporate</text>
+  <text x="598" y="58" text-anchor="middle" font-size="12" fill="#6E6E68">Salesforce tenant</text>
+
+  <!-- flows -->
+  <line x1="209" y1="126" x2="258" y2="126" stroke="#A32D2D" stroke-width="1.3" marker-end="url(#arrow)"/>
+  <text x="234" y="88" text-anchor="middle" font-size="12" fill="#6E6E68">&#9312; vishing call</text>
+  <line x1="350" y1="157" x2="350" y2="298" stroke="#A32D2D" stroke-width="1.3" marker-end="url(#arrow)"/>
+  <text x="360" y="229" font-size="12" fill="#6E6E68">&#9313; approve app</text>
+  <line x1="260" y1="331" x2="215" y2="331" stroke="#A32D2D" stroke-width="1.3" marker-end="url(#arrow)"/>
+  <text x="236" y="292" text-anchor="middle" font-size="12" fill="#6E6E68">&#9314; issue token</text>
+  <line x1="209" y1="310" x2="494" y2="211" stroke="#A32D2D" stroke-width="1.3" marker-end="url(#arrow)"/>
+  <text x="350" y="252" text-anchor="middle" font-size="12" fill="#6E6E68">&#9315; API calls</text>
+  <line x1="586" y1="247" x2="586" y2="418" stroke="#A32D2D" stroke-width="1.3" marker-end="url(#arrow)"/>
+  <text x="596" y="337" font-size="12" fill="#6E6E68">&#9316; query CRM</text>
+  <line x1="494" y1="451" x2="215" y2="360" stroke="#A32D2D" stroke-width="1.3" marker-end="url(#arrow)"/>
+  <text x="352" y="426" text-anchor="middle" font-size="12" fill="#6E6E68">&#9317; bulk export</text>
+  <line x1="121" y1="300" x2="121" y2="159" stroke="#A32D2D" stroke-width="1.3" marker-end="url(#arrow)"/>
+  <text x="131" y="236" font-size="12" fill="#6E6E68">&#9318; exfiltrate</text>
+  <path d="M33 571 L10 571 L10 80 L348 80" fill="none" stroke="#8C8B85" stroke-width="1.1" stroke-dasharray="6 4" marker-end="url(#arrowgray)"/>
+  <text x="178" y="72" text-anchor="middle" font-size="12" fill="#6E6E68">&#9319; extortion demand</text>
+
+  <!-- nodes: attacker-controlled (red) -->
+  <g>
+    <rect x="33" y="95" width="176" height="62" rx="8" fill="#FBEAEA" stroke="#C0392B" stroke-width="1"/>
+    <text x="121" y="122" text-anchor="middle" font-size="14" font-weight="bold" fill="#7B241C">UNC6040</text>
+    <text x="121" y="140" text-anchor="middle" font-size="11" fill="#A04A3E">ShinyHunters (access)</text>
+  </g>
+  <g>
+    <rect x="33" y="300" width="176" height="62" rx="8" fill="#FBEAEA" stroke="#C0392B" stroke-width="1"/>
+    <text x="121" y="327" text-anchor="middle" font-size="14" font-weight="bold" fill="#7B241C">Malicious app</text>
+    <text x="121" y="345" text-anchor="middle" font-size="11" fill="#A04A3E">Rogue data loader</text>
+  </g>
+
+  <!-- extortion stage (gray) -->
+  <g>
+    <rect x="33" y="540" width="176" height="62" rx="8" fill="#F0F0EE" stroke="#8C8B85" stroke-width="1"/>
+    <text x="121" y="567" text-anchor="middle" font-size="14" font-weight="bold" fill="#4A4A45">Extortion</text>
+    <text x="121" y="585" text-anchor="middle" font-size="11" fill="#6E6E68">UNC6240</text>
+  </g>
+
+  <!-- on attack path (amber) -->
+  <g>
+    <rect x="260" y="95" width="180" height="62" rx="8" fill="#FCF3E3" stroke="#B9770E" stroke-width="1"/>
+    <text x="350" y="122" text-anchor="middle" font-size="14" font-weight="bold" fill="#7A4E08">Employee / help desk</text>
+    <text x="350" y="140" text-anchor="middle" font-size="11" fill="#9A6A1A">Vishing target</text>
+  </g>
+  <g>
+    <rect x="260" y="300" width="180" height="62" rx="8" fill="#FCF3E3" stroke="#B9770E" stroke-width="1"/>
+    <text x="350" y="327" text-anchor="middle" font-size="14" font-weight="bold" fill="#7A4E08">OAuth app approval</text>
+    <text x="350" y="345" text-anchor="middle" font-size="11" fill="#9A6A1A">Salesforce consent</text>
+  </g>
+  <g>
+    <rect x="496" y="185" width="180" height="62" rx="8" fill="#FCF3E3" stroke="#B9770E" stroke-width="1"/>
+    <text x="586" y="212" text-anchor="middle" font-size="14" font-weight="bold" fill="#7A4E08">REST / Bulk API</text>
+    <text x="586" y="230" text-anchor="middle" font-size="11" fill="#9A6A1A">Salesforce data API</text>
+  </g>
+
+  <!-- protected asset (teal) -->
+  <g>
+    <rect x="496" y="420" width="180" height="62" rx="8" fill="#E3F5EE" stroke="#14916B" stroke-width="1"/>
+    <text x="586" y="447" text-anchor="middle" font-size="14" font-weight="bold" fill="#0E5E45">Salesforce CRM</text>
+    <text x="586" y="465" text-anchor="middle" font-size="11" fill="#2E7D63">Franchisee PII store</text>
+  </g>
+
+  <!-- legend -->
+  <circle cx="40" cy="655" r="5" fill="#C0392B"/><text x="50" y="659" font-size="11" fill="#6E6E68">attacker-controlled</text>
+  <circle cx="235" cy="655" r="5" fill="#B9770E"/><text x="245" y="659" font-size="11" fill="#6E6E68">legit but abused</text>
+  <circle cx="420" cy="655" r="5" fill="#14916B"/><text x="430" y="659" font-size="11" fill="#6E6E68">protected asset</text>
+  <circle cx="585" cy="655" r="5" fill="#8C8B85"/><text x="595" y="659" font-size="11" fill="#6E6E68">extortion stage</text>
+</svg>
